@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Download Canvas Courses as PDF</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css">        
+        .container {
+            padding: 30px;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('#form').submit(function() {
+                $('#loading_alert').slideDown();
+                return true;
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="/course_manual" id="form" method="post">
+            <h2>Download Canvas Courses as PDF</h2>
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="canvas_url">Canvas root url</label>
+                    <input type="url" class="form-control" id="canvas_url" name="canvas_url" aria-describedby="canvas_url_Help" placeholder="canvas url" value="https://canvas.eur.nl" required>
+                    <small id="canvas_url_Help" class="form-text text-muted">Provide your institution's Canvas url.</small>
+                </div>
+                <label for="access_token">Canvas access token</label>
+                <input type="text" class="form-control" id="access_token" name="access_token" aria-describedby="access_token_Help" placeholder="access token" required>
+                <small id="access_token_Help" class="form-text text-muted">Application to download Canvas LMS courses as pdf. Requires an Canvas Access Token which can be obtained from the Canvas User Settings, see <a href="https://community.canvaslms.com/docs/DOC-10806-4214724194" target="_blank">here</a>.</small>
+            </div>
+            <div class="form-group">
+                <label for="course_number">Course number</label>
+                <input type="number" class="form-control" id="course_number" name="course_number" aria-describedby="course_number_Help" placeholder="course number" required>
+                <small id="course_number_Help" class="form-text text-muted">Insert the Canvas Course ID code. You can find this code at the end of a Canvas course's url. See <a href="https://www.youtube.com/watch?v=DbwwLqSHe30" target="_blank">here</a> for more info.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <p>
+                <br/>
+            </p>
+            <div class="alert alert-warning" id="loading_alert" role="alert" style="display:none;">Please wait a moment while we're compiling the pdf.</div>
+        </form>
+    </div>
+
+</body>
+
+</html>
