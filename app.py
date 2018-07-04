@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template
 from canvasapi import Canvas
-from flask_weasyprint import HTML, CSS, render_pdf
-import os 
+from flask_weasyprint import HTML, CSS, render_pdf 
 
 app = Flask(__name__) #create the Flask app
 
