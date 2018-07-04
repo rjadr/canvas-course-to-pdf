@@ -130,8 +130,7 @@ def render_canvas_pdf():
         ### CREATE CSS ###
 
         css = '''
-
-span.a {
+           span.a {
                 display: block;
                 position: absolute;
                 left: 100px;
@@ -143,8 +142,6 @@ span.a {
                 left: 100px;
                 top: 750px;
             }         
-                  
-            
             html{font-family:Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;font-size:100%;
             }
             img {
